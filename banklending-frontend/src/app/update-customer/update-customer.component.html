@@ -1,0 +1,128 @@
+<div class="container">
+  <h2 class="text-center">Update Customer Details</h2><br>
+  <br>
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-center">
+      <div class="form-group">
+        <label for="custIdInput" class="label-style">Enter Customer ID:</label>
+
+        <div class="input-group">
+          <input type="number" id="custIdInput" [(ngModel)]="custId" class="form-control" style="max-width: 200px;">
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="fetchCustomerDetails()">Fetch Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div *ngIf="customerDetails" class="customer-details">
+        <h4>Existing Details:</h4><br>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Customer ID:</td>
+            <td>{{ customerDetails.custId }}</td>
+          </tr>
+          <tr>
+            <td>First Name:</td>
+            <td>{{ customerDetails.custFirstName }}</td>
+          </tr>
+          <tr>
+            <td>Last Name:</td>
+            <td>{{ customerDetails.custLastName }}</td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>{{ customerDetails.address }}</td>
+          </tr>
+          <tr>
+            <td>City:</td>
+            <td>{{ customerDetails.city }}</td>
+          </tr>
+          <tr>
+            <td>State:</td>
+            <td>{{ customerDetails.state }}</td>
+          </tr>
+          <tr>
+            <td>Contact No:</td>
+            <td>{{ customerDetails.contactNo }}</td>
+          </tr>
+          <tr>
+            <td>Aadhar Card:</td>
+            <td>{{ customerDetails.adharCard }}</td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>{{ customerDetails.emailId }}</td>
+          </tr>
+          <tr>
+            <td>Birth Date:</td>
+            <td>{{ customerDetails.birthDate }}</td>
+          </tr>
+          <tr>
+            <td>Monthly Salary:</td>
+            <td>{{ customerDetails.monthlySalary }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="update-customer">
+        <h4>Updated Details:</h4>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>First Name:</td>
+            <td><input type="text" [(ngModel)]="updatedData.custFirstName" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Last Name:</td>
+            <td><input type="text" [(ngModel)]="updatedData.custLastName" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td><input type="text" [(ngModel)]="updatedData.address" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>City:</td>
+            <td><input type="text" [(ngModel)]="updatedData.city" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>State:</td>
+            <td><input type="text" [(ngModel)]="updatedData.state" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Contact No:</td>
+            <td><input type="number" [(ngModel)]="updatedData.contactNo" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Aadhar Card:</td>
+            <td><input type="number" [(ngModel)]="updatedData.adharCard" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="email" [(ngModel)]="updatedData.emailId" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Birth Date:</td>
+            <td><input type="date" [(ngModel)]="updatedData.birthDate" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Monthly Salary:</td>
+            <td><input type="number" [(ngModel)]="updatedData.monthlySalary" class="form-control"></td>
+          </tr>
+        </table>
+        <button class="btn btn-primary" (click)="updateCustomer()">Update</button>
+        <div>{{ updateStatus }}</div>
+      </div>
+    </div>
+  </div>
+</div>

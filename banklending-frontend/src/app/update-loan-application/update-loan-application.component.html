@@ -1,0 +1,92 @@
+<div class="container">
+  <h2 class="text-center">Update Loan Application</h2><br>
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <div class="form-group d-flex align-items-center justify-content-center">
+        <label for="loanAppId" class="mr-2">Loan Application ID:</label>
+        <input type="text" id="loanAppId" [(ngModel)]="loanAppId" class="form-control" style="max-width: 150px;">
+        <button class="btn btn-primary ml-2" (click)="getLoanApplication()">Get Loan Application</button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div *ngIf="loanApplication" class="loan-application-details">
+        <h4>Exsiting  Details:</h4><br>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Loan Application ID:</td>
+            <td>{{ loanApplication.loanAppId }}</td>
+          </tr>
+          <tr>
+            <td>Loan Amount:</td>
+            <td>{{ loanApplication.loanAmt }}</td>
+          </tr>
+          <tr>
+            <td>No of Years:</td>
+            <td>{{ loanApplication.noOfYears }}</td>
+          </tr>
+          <tr>
+            <td>Purpose:</td>
+            <td>{{ loanApplication.purpose }}</td>
+          </tr>
+          <tr>
+            <td>Application Status:</td>
+            <td>{{ loanApplication.appStatus }}</td>
+          </tr>
+          <tr>
+            <td>Type of Loan:</td>
+            <td>{{ loanApplication.typeOfLoan }}</td>
+          </tr>
+          
+          <tr>
+            <td>Status:</td>
+            <td>{{ loanApplication.status }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="loanApplication" class="update-loan-application">
+        <h4>Updated Details:</h4><br>
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>Loan Application ID:</td>
+            <td>{{ loanApplication.loanAppId }}</td>
+          </tr>
+          <tr>
+            <td>Loan Amount:</td>
+            <td><input type="text" [(ngModel)]="loanApplication.loanAmt" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>No of Years:</td>
+            <td><input type="text" [(ngModel)]="loanApplication.noOfYears" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Purpose:</td>
+            <td><input type="text" [(ngModel)]="loanApplication.purpose" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Application Status:</td>
+            <td><input type="text" [(ngModel)]="loanApplication.appStatus" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>Type of Loan:</td>
+            <td><input type="text" [(ngModel)]="loanApplication.typeOfLoan" class="form-control"></td>
+          </tr>
+         
+        </table>
+        <button class="btn btn-primary" (click)="updateLoanApplication()">Update Loan Application</button>
+        <div>{{ updateStatus }}</div>
+      </div>
+    </div>
+  </div>
+</div>

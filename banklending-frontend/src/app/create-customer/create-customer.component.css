@@ -1,0 +1,25 @@
+.custom-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.custom-form .form-group {
+  margin-bottom: 20px;
+}
+
+.custom-form .form-group label {
+  font-weight: bold;
+}
+
+.custom-form .form-control {
+  width: 100%;
+}
+
+.custom-form .invalid-feedback {
+  display: none;
+  color: red;
+}
+
+.custom-form .form-control:invalid + .invalid-feedback {
+  display: block;
+}

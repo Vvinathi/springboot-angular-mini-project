@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="text-center">Create New Loan Application</h2><br>
+  <form (ngSubmit)="createLoanApplication()" class="needs-validation custom-form">
+    <div class="form-group">
+      
+     
+      <label for="custId">Customer ID:</label>
+      <input type="number" [(ngModel)]="loanApplication.customer.custId" name="custId" required class="form-control">
+      <div class="invalid-feedback">Customer ID is required</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="loanAmt">Loan Amount:</label>
+      <input type="number" [(ngModel)]="loanApplication.loanAmt" name="loanAmt" required class="form-control">
+      <div class="invalid-feedback">Loan Amount is required</div>
+    </div>
+    <div class="form-group">
+      <label for="noOfYears">Number of Years:</label>
+      <input type="number" [(ngModel)]="loanApplication.noOfYears" name="noOfYears" required class="form-control">
+      <div class="invalid-feedback">Number of Years is required</div>
+    </div>
+    <div class="form-group">
+      <label for="purpose">Purpose:</label>
+      <input type="text" [(ngModel)]="loanApplication.purpose" name="purpose" required class="form-control">
+      <div class="invalid-feedback">Purpose is required</div>
+    </div>
+    <div class="form-group">
+      <label for="appStatus">Application Status:</label>
+      <select [(ngModel)]="loanApplication.appStatus" name="appStatus" required class="form-control">
+        <option value="NewLoan">New Loan</option>
+        <option value="Canceled">Canceled</option>
+        <option value="Approved">Approved</option>
+        <option value="Sanctioned">Sanctioned</option>
+      </select>
+      <div class="invalid-feedback">Application Status is required</div>
+    </div>
+    <div class="form-group">
+      <label for="typeOfLoan">Type of Loan:</label>
+      <input type="text" [(ngModel)]="loanApplication.typeOfLoan" name="typeOfLoan" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="loanAppDate">Loan Application Date:</label>
+      <input type="date" [(ngModel)]="loanApplication.loanAppDate" name="loanAppDate" required class="form-control">
+      <div class="invalid-feedback">Loan Application Date is required</div>
+    </div>
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select [(ngModel)]="loanApplication.status" name="status" required class="form-control">
+        <option value="accepted">Accepted</option>
+        <option value="rejected">Rejected</option>
+        <option value="no status">No Status</option>
+      </select>
+      <div class="invalid-feedback">Status is required</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div>{{ creationStatus }}</div>
+  </form>
+</div>

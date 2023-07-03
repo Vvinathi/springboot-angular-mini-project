@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  
+  <div class="image-grid">
+    <h1 class="choose-option-heading">Select an Option</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <a routerLink="/create-customer">
+          <img src="assets/newcustomer.png" alt="Create Customer" (click)="navigateTo('/create-customer')" class="grid-image">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a routerLink="/update-customer">
+          <img src="assets/updatecustomer.png" alt="Update Customer" (click)="navigateTo('/update-customer')" class="grid-image">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <a routerLink="/new-loan-application">
+          <img src="assets/newloan.png" alt="New Loan Application" (click)="navigateTo('/new-loan-application')" class="grid-image">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <a routerLink="/loan-application">
+          <img src="assets/updateloan.png" alt="Update Loan Application" (click)="navigateTo('/loan-application')" class="grid-image">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

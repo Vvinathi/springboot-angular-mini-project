@@ -1,0 +1,19 @@
+<ng-container *ngIf="router.url !== '/'">
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <button class="back-button" (click)="goBack()">Go Back</button>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active">
+          <button class="home-button">Go Home</button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</ng-container>
+
+<router-outlet></router-outlet>
+
